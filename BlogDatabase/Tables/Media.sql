@@ -5,5 +5,6 @@
     [MediaTypeId] INT NULL, 
     [Name] VARCHAR(50) NULL, 
     [IsDeleted] BIT NOT NULL DEFAULT 0, 
-    [CreatedOn] DATETIME2 NOT NULL DEFAULT GetDate()
+    [CreatedOn] DATETIME2 NOT NULL DEFAULT GetDate(),
+	CONSTRAINT [FK_Media_MediaType] FOREIGN KEY ([MediaTypeId]) REFERENCES [MediaType]([Id]),
 )

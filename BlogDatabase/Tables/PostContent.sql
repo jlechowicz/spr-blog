@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[Content]
+﻿CREATE TABLE [dbo].[PostContent]
 (
 	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
     [PostId] INT NOT NULL, 

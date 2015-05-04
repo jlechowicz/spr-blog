@@ -66,5 +66,12 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Tag.sql" />
+    <Build Include="Tables\Post.sql" />
+    <Build Include="Tables\PostContent.sql" />
+    <Build Include="Tables\PostTag.sql" />
+    <Build Include="Views\ActivePosts.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="BlogDatabase.refactorlog" />
   </ItemGroup>
 </Project>

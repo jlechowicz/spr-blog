@@ -66,6 +66,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BlogDatabaseEntities.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Interface\IRepository.cs" />
     <Compile Include="Post.cs">
       <DependentUpon>BlogDatabaseEntities.tt</DependentUpon>
     </Compile>

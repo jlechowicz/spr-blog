@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlogDatalayer.Interface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,5 @@ namespace BlogDataService.Interface
     {
         void Commit();
         void Rollback();
-        T Fetch<T>(object key);
     }
 }

@@ -7,6 +7,10 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BlogDatabase", "BlogDatabas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogDatalayer", "BlogDatalayer\BlogDatalayer.csproj", "{397810D1-C74F-4A1D-B201-D09E38BAB184}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataProjects", "DataProjects", "{08C20AF0-0FCD-472A-9E3C-0D80E167C255}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceProjects", "ServiceProjects", "{5D20272A-DB54-4235-99E2-2067E1352147}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,5 +30,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B498532C-7445-452E-8846-4250D8F03B2F} = {08C20AF0-0FCD-472A-9E3C-0D80E167C255}
+		{397810D1-C74F-4A1D-B201-D09E38BAB184} = {08C20AF0-0FCD-472A-9E3C-0D80E167C255}
 	EndGlobalSection
 EndGlobal

@@ -18,12 +18,7 @@ namespace BlogTests.DataServiceTests
         [TestMethod]
         public void Test()
         {
-            UnityContainer container = new UnityContainer();
-            container.RegisterType<IDataServiceUnitOfWork, DataServiceUnitOfWork>(new ContainerControlledLifetimeManager());
-            container.RegisterType<IDataAccessService, DataAccessService>(new ContainerControlledLifetimeManager());
-            container.RegisterType<IDbContext, BlogDatabaseEntities>(new ContainerControlledLifetimeManager());
-            UnityServiceLocator locator = new UnityServiceLocator(container);
-            ServiceLocator.SetLocatorProvider(() => locator);
+
             var UoW = ServiceLocator.Current.GetInstance<IDataServiceUnitOfWork>();
             var posts = UoW.DataAccessService.All<Post>();
             Assert.AreEqual(0, posts.Count());

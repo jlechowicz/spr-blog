@@ -2,8 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace BlogDatalayer
@@ -14,47 +16,54 @@ namespace BlogDatalayer
     {
         public System.Data.Entity.EntityState GetEntityState<TEntity>(TEntity entity) where TEntity : class
         {
-            throw new NotImplementedException();
+            return this.Entry(entity).State;
         }
 
         public string GetTableName<TEntity>() where TEntity : class
         {
-            throw new NotImplementedException();
+            var sql = ((IObjectContextAdapter)this).ObjectContext.CreateObjectSet<TEntity>().ToTraceString();
+            Regex regex = new Regex("FROM (?<table>.*) AS");
+            Match match = regex.Match(sql);
+
+            string table = match.Groups["table"].Value;
+            return table;
         }
 
         public void SetEntityState<TEntity>(TEntity entity, System.Data.Entity.EntityState state) where TEntity : class
         {
-            throw new NotImplementedException();
+            Entry(entity).State = state;
         }
 
         public System.Data.Entity.IDbSet<TEntity> GetDbSet<TEntity>() where TEntity : class
         {
-            throw new NotImplementedException();
+            return base.Set<TEntity>();
         }
 
         public System.Data.Entity.Core.Metadata.Edm.EntitySet GetEntitySet<TEntity>() where TEntity : class
         {
-            throw new NotImplementedException();
+            var set = ((IObjectContextAdapter)this).ObjectContext.CreateObjectSet<TEntity>();
+            var entitySet = set.EntitySet;
+            return entitySet;
         }
 
         public System.Data.Entity.Infrastructure.DbContextConfiguration Configuration
         {
-            get { throw new NotImplementedException(); }
+            get { return null; }
         }
 
         public int SaveChanges()
         {
-            throw new NotImplementedException();
+            return base.SaveChanges();
         }
 
         public System.Data.Entity.Database Database
         {
-            get { throw new NotImplementedException(); }
+            get { return base.Database; }
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            base.Dispose();
         }
     }
 }

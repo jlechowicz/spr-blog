@@ -37,6 +37,7 @@
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -66,6 +67,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BlogDatabaseEntities.edmx</DependentUpon>
     </Compile>
+    <Compile Include="PartialClasses\BlogDatabaseEntities.cs" />
     <Compile Include="Post.cs">
       <DependentUpon>BlogDatabaseEntities.tt</DependentUpon>
     </Compile>
@@ -104,6 +106,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BlogBaseDatalayer\BlogBaseDatalayer.csproj">
+      <Project>{864cd7d0-4849-4715-84e9-aa999aa76173}</Project>
+      <Name>BlogBaseDatalayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

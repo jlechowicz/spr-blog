@@ -7,6 +7,7 @@ using BlogDatalayer;
 using System.Linq;
 using Microsoft.Practices.Unity;
 using BlogBaseDatalayer.Interfaces;
+using System.Data.Entity;
 
 
 namespace BlogTests.DataServiceTests
@@ -20,7 +21,7 @@ namespace BlogTests.DataServiceTests
             UnityContainer container = new UnityContainer();
             container.RegisterType<IDataServiceUnitOfWork, DataServiceUnitOfWork>(new ContainerControlledLifetimeManager());
             container.RegisterType<IDataAccessService, DataAccessService>(new ContainerControlledLifetimeManager());
-            container.RegisterType<IDbContext, DataAccessService>(new ContainerControlledLifetimeManager());
+            container.RegisterType<IDbContext, BlogDatabaseEntities>(new ContainerControlledLifetimeManager());
             UnityServiceLocator locator = new UnityServiceLocator(container);
             ServiceLocator.SetLocatorProvider(() => locator);
             var UoW = ServiceLocator.Current.GetInstance<IDataServiceUnitOfWork>();

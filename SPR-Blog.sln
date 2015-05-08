@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestProjects", "TestProject
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogTests", "BlogTests\BlogTests.csproj", "{834759B2-EDC2-48B9-AF06-8E2FC2B616F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogBaseDataService", "BlogBaseDataService\BlogBaseDataService.csproj", "{BB72147C-30E9-4A07-88B6-56238E020624}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{834759B2-EDC2-48B9-AF06-8E2FC2B616F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{834759B2-EDC2-48B9-AF06-8E2FC2B616F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{834759B2-EDC2-48B9-AF06-8E2FC2B616F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB72147C-30E9-4A07-88B6-56238E020624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB72147C-30E9-4A07-88B6-56238E020624}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB72147C-30E9-4A07-88B6-56238E020624}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB72147C-30E9-4A07-88B6-56238E020624}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,5 +56,6 @@ Global
 		{397810D1-C74F-4A1D-B201-D09E38BAB184} = {08C20AF0-0FCD-472A-9E3C-0D80E167C255}
 		{2E38FA78-77D8-4730-A177-19BB5E8A613B} = {5D20272A-DB54-4235-99E2-2067E1352147}
 		{834759B2-EDC2-48B9-AF06-8E2FC2B616F0} = {EB1075DD-E559-4F35-A098-7D4481A2D6C2}
+		{BB72147C-30E9-4A07-88B6-56238E020624} = {5D20272A-DB54-4235-99E2-2067E1352147}
 	EndGlobalSection
 EndGlobal

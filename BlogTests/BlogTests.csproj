@@ -35,18 +35,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BlogBaseDatalayer.Fakes">
-      <HintPath>FakesAssemblies\BlogBaseDatalayer.Fakes.dll</HintPath>
-    </Reference>
-    <Reference Include="BlogBaseDataService.Fakes">
-      <HintPath>FakesAssemblies\BlogBaseDataService.Fakes.dll</HintPath>
-    </Reference>
-    <Reference Include="BlogDatalayer.Fakes">
-      <HintPath>FakesAssemblies\BlogDatalayer.Fakes.dll</HintPath>
-    </Reference>
-    <Reference Include="BlogDataService.Fakes">
-      <HintPath>FakesAssemblies\BlogDataService.Fakes.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -108,17 +96,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Fakes Include="Fakes\BlogDatalayer.fakes" />
-  </ItemGroup>
-  <ItemGroup>
-    <Fakes Include="Fakes\BlogDataService.fakes" />
-  </ItemGroup>
-  <ItemGroup>
-    <Fakes Include="Fakes\BlogBaseDataService.fakes" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
-    <Fakes Include="Fakes\BlogBaseDatalayer.fakes" />
     <None Include="packages.config" />
   </ItemGroup>
   <Choose>

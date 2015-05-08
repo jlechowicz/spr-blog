@@ -13,13 +13,13 @@ using System.Data.Entity;
 namespace BlogTests.DataServiceTests
 {
     [TestClass]
-    public class RepositoryTests
+    public class RepositoryTests : TestBase
     {
         [TestMethod]
         public void Test()
         {
 
-            var UoW = ServiceLocator.Current.GetInstance<IDataServiceUnitOfWork>();
+            var UoW = CurrentServiceLocator.GetInstance<IDataServiceUnitOfWork>();
             var posts = UoW.DataAccessService.All<Post>();
             Assert.AreEqual(0, posts.Count());
         }

@@ -87,6 +87,7 @@
     <Compile Include="DataServiceTests\RepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="TestBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BlogBaseDatalayer\BlogBaseDatalayer.csproj">

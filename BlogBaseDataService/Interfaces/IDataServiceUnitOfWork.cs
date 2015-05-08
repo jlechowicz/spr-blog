@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlogBaseDataService.Interfaces
 {
-    public interface IDataServiceUnitOfWork
+    public interface IDataServiceUnitOfWork : IDisposable
     {
         IDataAccessService DataAccessService { get; }
         T ResolveDataService<T>() where T : IDataServiceInitialize;

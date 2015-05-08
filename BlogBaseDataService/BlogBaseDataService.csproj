@@ -53,6 +53,7 @@
     <Compile Include="Implementation\DataAccessService.cs" />
     <Compile Include="Implementation\DataServiceBase.cs" />
     <Compile Include="Implementation\DataServiceUnitOfWork.cs" />
+    <Compile Include="Implementation\ServiceDataAccessHandle.cs" />
     <Compile Include="Interfaces\IDataAccessService.cs" />
     <Compile Include="Interfaces\IDataService.cs" />
     <Compile Include="Interfaces\IDataServiceInitialize.cs" />

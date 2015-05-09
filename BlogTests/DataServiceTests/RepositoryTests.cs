@@ -18,18 +18,17 @@ namespace BlogTests.DataServiceTests
         [TestMethod]
         public void Test()
         {
-            var UoW = CurrentServiceLocator.GetInstance<IDataServiceUnitOfWork>();
-
-            var posts = UoW.DataAccessService.All<Post>();
-            Assert.AreEqual(DummyPostData().Count(), posts.Count());
+            using (ServiceDataAccessHandler)
+            {
+                var posts = DataServiceUnitOfWork.DataAccessService.All<Post>();
+                Assert.AreEqual(DummyPostData().Count(), posts.Count());
+            }
         }
 
         private IQueryable<Post> DummyPostData()
         {
             var list = new Post[] {
-                new Post(){ Id = 1},
-                new Post(){ Id = 2},
-                new Post(){ Id = 3},
+               
             };
             return list.AsQueryable();
         }

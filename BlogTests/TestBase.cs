@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Rhino.Mocks;
 
 namespace BlogTests
 {
@@ -13,6 +14,8 @@ namespace BlogTests
     {
         private ServiceDataAccessHandle _serviceDataAccessHandler;
         private IDataServiceUnitOfWork _dataServiceUnitOfWork;
+        private IDataAccessService _mockDataAccessService;
+
         public IServiceLocator CurrentServiceLocator
         {
             get

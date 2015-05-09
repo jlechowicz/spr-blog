@@ -8,6 +8,7 @@ using System.Linq;
 using Microsoft.Practices.Unity;
 using BlogBaseDatalayer.Interfaces;
 using System.Data.Entity;
+using Rhino.Mocks;
 
 
 namespace BlogTests.DataServiceTests

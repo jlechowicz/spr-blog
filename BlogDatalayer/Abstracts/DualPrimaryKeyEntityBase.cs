@@ -8,9 +8,9 @@ namespace BlogDatalayer.Abstracts
 {
     public abstract class DualPrimaryKeyEntityBase
     {
-        private int _primaryKey1;
+        protected int _primaryKey1;
         public int PrimaryKey1 { get { return _primaryKey1; } }
-        private int _primaryKey2;
+        protected int _primaryKey2;
         public int PrimaryKey2 { get { return _primaryKey2; } }
     }
 }

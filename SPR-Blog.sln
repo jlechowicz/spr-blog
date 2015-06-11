@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BlogDatabase", "BlogDatabase\BlogDatabase.sqlproj", "{B498532C-7445-452E-8846-4250D8F03B2F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogDatalayer", "BlogDatalayer\BlogDatalayer.csproj", "{397810D1-C74F-4A1D-B201-D09E38BAB184}"
@@ -16,6 +14,13 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestProjects", "TestProjects", "{EB1075DD-E559-4F35-A098-7D4481A2D6C2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogTests", "BlogTests\BlogTests.csproj", "{834759B2-EDC2-48B9-AF06-8E2FC2B616F0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{142FE7CE-72F1-412C-B19E-66202B01A818}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,8 +51,8 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{B498532C-7445-452E-8846-4250D8F03B2F} = {08C20AF0-0FCD-472A-9E3C-0D80E167C255}
 		{397810D1-C74F-4A1D-B201-D09E38BAB184} = {08C20AF0-0FCD-472A-9E3C-0D80E167C255}
+		{B498532C-7445-452E-8846-4250D8F03B2F} = {08C20AF0-0FCD-472A-9E3C-0D80E167C255}
 		{2E38FA78-77D8-4730-A177-19BB5E8A613B} = {5D20272A-DB54-4235-99E2-2067E1352147}
 		{834759B2-EDC2-48B9-AF06-8E2FC2B616F0} = {EB1075DD-E559-4F35-A098-7D4481A2D6C2}
 	EndGlobalSection

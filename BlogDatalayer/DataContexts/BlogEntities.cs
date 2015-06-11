@@ -1,6 +1,7 @@
 namespace BlogDatalayer.DataContexts
 {
     using BlogDatalayer.Interfaces;
+    using BlogDatalayer.Entities;
     using System;
     using System.Data.Entity;
     using System.Linq;
@@ -10,12 +11,19 @@ namespace BlogDatalayer.DataContexts
         public BlogEntities()
             : base("name=BlogEntities")
         {
+ 
         }
 
         // Add a DbSet for each entity type that you want to include in your model. For more information 
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 
-        // public virtual DbSet<MyEntity> MyEntities { get; set; }
+        public virtual DbSet<Post> Posts { get; set; }
+
+        public virtual DbSet<Tag> Tags { get; set; }
+
+        public virtual DbSet<PostTag> PostTags { get; set; }
+
+        public virtual DbSet<PostContent> PostContents { get; set; }
 
         public void Save()
         {
@@ -62,10 +70,4 @@ namespace BlogDatalayer.DataContexts
             throw new NotImplementedException();
         }
     }
-
-    //public class MyEntity
-    //{
-    //    public int Id { get; set; }
-    //    public string Name { get; set; }
-    //}
 }

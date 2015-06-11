@@ -12,6 +12,9 @@ namespace BlogDatalayer.Entities
         public int PostId { get; set; }
         public int TagId { get; set; }
 
+        public virtual Post Post { get; set; }
+        public virtual Tag Tag { get; set; }
+
         public PostTag()
         {
             _primaryKey1 = PostId;

@@ -14,5 +14,8 @@ namespace BlogDatalayer.Entities
         public bool IsDeleted { get; set; }
         public DateTime CreatedOn { get; set; }
         public DateTime? LastModified { get; set; }
+
+        public virtual ICollection<PostTag> PostTags { get; set; }
+        public virtual ICollection<PostContent> PostContents { get; set; }
     }
 }

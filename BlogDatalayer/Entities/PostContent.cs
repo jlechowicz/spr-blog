@@ -15,5 +15,7 @@ namespace BlogDatalayer.Entities
         public DateTime SavedOn { get; set; }
         public bool IsDisplayed { get; set; }
         public int EditedBy { get; set; }
+
+        public virtual Post Post { get; set; }
     }
 }

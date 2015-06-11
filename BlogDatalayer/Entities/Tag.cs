@@ -10,5 +10,7 @@ namespace BlogDatalayer.Entities
     public class Tag : DataEntityBase
     {
         public string TagName { get; set; }
+
+        public virtual ICollection<PostTag> PostTags { get; set; }
     }
 }

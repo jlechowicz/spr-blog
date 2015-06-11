@@ -1,17 +1,12 @@
 namespace BlogDatalayer.DataContexts
 {
+    using BlogDatalayer.Interfaces;
     using System;
     using System.Data.Entity;
     using System.Linq;
 
-    public class BlogEntities : DbContext
+    public class BlogEntities : DbContext, IDbContext
     {
-        // Your context has been configured to use a 'BlogEntities' connection string from your application's 
-        // configuration file (App.config or Web.config). By default, this connection string targets the 
-        // 'BlogDatalayer.BlogEntities' database on your LocalDb instance. 
-        // 
-        // If you wish to target a different database and/or database provider, modify the 'BlogEntities' 
-        // connection string in the application configuration file.
         public BlogEntities()
             : base("name=BlogEntities")
         {
@@ -21,6 +16,51 @@ namespace BlogDatalayer.DataContexts
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 
         // public virtual DbSet<MyEntity> MyEntities { get; set; }
+
+        public void Save()
+        {
+            this.SaveChanges();
+        }
+
+        public void Create<EntityType>() where EntityType : class
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Add<EntityType>(EntityType Entity) where EntityType : class
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update<EntityType>(EntityType Entity) where EntityType : class
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete<EntityType>(EntityType Entity) where EntityType : class
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Attach<EntityType>(EntityType Entity) where EntityType : class
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Detatch<EntityType>(EntityType Entity) where EntityType : class
+        {
+            throw new NotImplementedException();
+        }
+
+        public EntityType Find<EntityType>(params object[] keys) where EntityType : class
+        {
+            throw new NotImplementedException();
+        }
+
+        public IQueryable<EntityType> All<EntityType>() where EntityType : class
+        {
+            throw new NotImplementedException();
+        }
     }
 
     //public class MyEntity

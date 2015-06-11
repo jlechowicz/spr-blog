@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BlogDatalayer.Interfaces
 {
-    public interface IDbContext
+    public interface IDbContext : IDisposable
     {
         void Save();
         void Create<EntityType>() where EntityType : class;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlogDatalayer.Abstracts
 {
-    public class DataEntityBase
+    public abstract class DataEntityBase
     {
         public int Id { get; set; }
     }

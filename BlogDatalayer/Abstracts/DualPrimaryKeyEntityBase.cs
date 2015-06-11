@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlogDatalayer.Abstracts
 {
-    public class DualPrimaryKeyEntityBase
+    public abstract class DualPrimaryKeyEntityBase
     {
         private int _primaryKey1;
         public int PrimaryKey1 { get { return _primaryKey1; } }

@@ -1,4 +1,4 @@
-namespace BlogDatalayer
+namespace BlogDatalayer.DataContexts
 {
     using System;
     using System.Data.Entity;

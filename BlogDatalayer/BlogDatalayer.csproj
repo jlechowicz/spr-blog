@@ -51,7 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstracts\DataEntityBase.cs" />
     <Compile Include="DataContexts\BlogEntities.cs" />
+    <Compile Include="Entities\Post.cs" />
+    <Compile Include="Entities\PostContent.cs" />
+    <Compile Include="Entities\PostTag.cs" />
+    <Compile Include="Entities\Tag.cs" />
     <Compile Include="Interfaces\IDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

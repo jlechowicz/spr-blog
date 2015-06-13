@@ -73,6 +73,8 @@
     <Build Include="Tables\User.sql" />
     <Build Include="Tables\Role.sql" />
     <Build Include="Tables\UserRole.sql" />
+    <Build Include="Tables\File.sql" />
+    <Build Include="Tables\MimeType.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BlogDatabase.publish.xml" />

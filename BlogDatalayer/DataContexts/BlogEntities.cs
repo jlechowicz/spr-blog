@@ -31,6 +31,10 @@ namespace BlogDatalayer.DataContexts
 
         public virtual DbSet<UserRole> UserRoles { get; set; }
 
+        public virtual DbSet<File> Files { get; set; }
+
+        public virtual DbSet<MimeType> MimeTypes { get; set; }
+
         public void Save()
         {
             this.SaveChanges();

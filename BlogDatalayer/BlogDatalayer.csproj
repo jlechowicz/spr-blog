@@ -53,6 +53,8 @@
   <ItemGroup>
     <Compile Include="Abstracts\DataEntityBase.cs" />
     <Compile Include="DataContexts\BlogEntities.cs" />
+    <Compile Include="Entities\File.cs" />
+    <Compile Include="Entities\MimeType.cs" />
     <Compile Include="Entities\Post.cs" />
     <Compile Include="Entities\PostContent.cs" />
     <Compile Include="Entities\PostTag.cs" />

@@ -6,5 +6,6 @@
 	[FileData] VARBINARY(MAX),
 	[IsDeleted] BIT NOT NULL DEFAULT 0,
 	[CreatedOn] DATETIME2 NOT NULL DEFAULT GETDATE(),
-	[LastModified] DATETIME2 NULL
+	[LastModified] DATETIME2 NULL,
+	CONSTRAINT [FK_File_MimeType] FOREIGN KEY ([MimeTypeId]) REFERENCES [MimeType]([Id])
 )

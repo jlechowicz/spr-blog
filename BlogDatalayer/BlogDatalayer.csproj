@@ -56,7 +56,10 @@
     <Compile Include="Entities\Post.cs" />
     <Compile Include="Entities\PostContent.cs" />
     <Compile Include="Entities\PostTag.cs" />
+    <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\Tag.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\UserRole.cs" />
     <Compile Include="Interfaces\IDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

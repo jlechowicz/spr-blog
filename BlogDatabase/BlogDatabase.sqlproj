@@ -70,6 +70,9 @@
     <Build Include="Tables\PostContent.sql" />
     <Build Include="Tables\PostTag.sql" />
     <Build Include="Views\ActivePosts.sql" />
+    <Build Include="Tables\User.sql" />
+    <Build Include="Tables\Role.sql" />
+    <Build Include="Tables\UserRole.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BlogDatabase.publish.xml" />

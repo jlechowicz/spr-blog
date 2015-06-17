@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Core.Metadata.Edm;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,13 +11,10 @@ namespace BlogDatalayer.Interfaces
     public interface IDbContext : IDisposable
     {
         void Save();
-        void Create<EntityType>() where EntityType : class;
-        void Add<EntityType>(EntityType Entity) where EntityType : class;
-        void Update<EntityType>(EntityType Entity) where EntityType : class;
-        void Delete<EntityType>(EntityType Entity) where EntityType : class;
-        void Attach<EntityType>(EntityType Entity) where EntityType : class;
-        void Detatch<EntityType>(EntityType Entity) where EntityType : class;
-        EntityType Find<EntityType>(params object[] keys) where EntityType : class;
-        IQueryable<EntityType> All<EntityType>() where EntityType : class;
+        EntityState GetEntityState<TEntity>(TEntity entity) where TEntity : class;
+        string GetTableName<TEntity>() where TEntity : class;
+        void SetEntityState<TEntity>(TEntity entity, System.Data.Entity.EntityState state) where TEntity : class;
+        IDbSet<TEntity> GetDbSet<TEntity>() where TEntity : class;
+        EntitySet GetEntitySet<TEntity>() where TEntity : class;
     }
 }

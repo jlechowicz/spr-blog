@@ -5,7 +5,13 @@ namespace BlogDatalayer.DataContexts
     using System;
     using System.Data.Entity;
     using System.Linq;
+    using System.ComponentModel.Composition;
+    using System.Data.Entity.Infrastructure;
+    using System.Text.RegularExpressions;
+    using BlogDatalayer.Configuration;
 
+    [Export(typeof(IDbContext))]
+    [PartCreationPolicy(CreationPolicy.NonShared)]
     public class BlogEntities : DbContext, IDbContext
     {
         public BlogEntities()
@@ -35,49 +41,45 @@ namespace BlogDatalayer.DataContexts
 
         public virtual DbSet<MimeType> MimeTypes { get; set; }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            ConfigurationBinder.Bind(modelBuilder);
+        }
+
+        public System.Data.Entity.EntityState GetEntityState<TEntity>(TEntity entity) where TEntity : class
+        {
+            return this.Entry(entity).State;
+        }
+
+        public string GetTableName<TEntity>() where TEntity : class
+        {
+            var sql = ((IObjectContextAdapter)this).ObjectContext.CreateObjectSet<TEntity>().ToTraceString();
+            Regex regex = new Regex("FROM (?<table>.*) AS");
+            Match match = regex.Match(sql);
+            string table = match.Groups["table"].Value;
+            return table;
+        }
+
+        public void SetEntityState<TEntity>(TEntity entity, System.Data.Entity.EntityState state) where TEntity : class
+        {
+            Entry(entity).State = state;
+        }
+
+        public System.Data.Entity.IDbSet<TEntity> GetDbSet<TEntity>() where TEntity : class
+        {
+            return base.Set<TEntity>();
+        }
+
+        public System.Data.Entity.Core.Metadata.Edm.EntitySet GetEntitySet<TEntity>() where TEntity : class
+        {
+            var set = ((IObjectContextAdapter)this).ObjectContext.CreateObjectSet<TEntity>();
+            var entitySet = set.EntitySet;
+            return entitySet;
+        }
+
         public void Save()
         {
-            this.SaveChanges();
-        }
-
-        public void Create<EntityType>() where EntityType : class
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Add<EntityType>(EntityType Entity) where EntityType : class
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update<EntityType>(EntityType Entity) where EntityType : class
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete<EntityType>(EntityType Entity) where EntityType : class
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Attach<EntityType>(EntityType Entity) where EntityType : class
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Detatch<EntityType>(EntityType Entity) where EntityType : class
-        {
-            throw new NotImplementedException();
-        }
-
-        public EntityType Find<EntityType>(params object[] keys) where EntityType : class
-        {
-            throw new NotImplementedException();
-        }
-
-        public IQueryable<EntityType> All<EntityType>() where EntityType : class
-        {
-            throw new NotImplementedException();
+            base.SaveChanges();
         }
     }
 }
